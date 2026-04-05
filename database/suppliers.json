@@ -1,0 +1,26 @@
+[
+{
+"name":"ABC Textiles",
+"country":"Pakistan",
+"product":"hoodies",
+"price":"4.20"
+},
+{
+"name":"Dragon Apparel",
+"country":"China",
+"product":"hoodies",
+"price":"3.90"
+},
+{
+"name":"Elite Garments",
+"country":"Bangladesh",
+"product":"hoodies",
+"price":"4.10"
+},
+{
+"name":"Euro Fashion",
+"country":"Turkey",
+"product":"tshirts",
+"price":"3.50"
+}
+]
