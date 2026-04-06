@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supplier Finder - GlobalSource AI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+background:linear-gradient(-45deg,#eef1f8,#e4ebf7,#f0f4ff,#dde6ff);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+padding-bottom:80px;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+padding:25px 80px;
+font-weight:600;
+}
+
+.navbar a{
+text-decoration:none;
+color:#111;
+margin-left:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:40px;
+}
+
+.title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.title h1{
+font-size:45px;
+}
+
+.form-box{
+background:rgba(255,255,255,0.4);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+
+.form-group{
+margin-bottom:20px;
+}
+
+label{
+font-weight:500;
+display:block;
+margin-bottom:8px;
+}
+
+input,select{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+button{
+margin-top:10px;
+width:100%;
+padding:15px;
+border:none;
+border-radius:30px;
+background:black;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.results{
+margin-top:50px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:18px;
+padding:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.tag{
+font-size:13px;
+background:#f1f1f1;
+display:inline-block;
+padding:4px 10px;
+border-radius:20px;
+margin-top:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+<div>GlobalSource AI</div>
+<div>
+<a href="index.html">Home</a>
+<a href="finder.html">Supplier Finder</a>
+</div>
+</div>
+
+<div class="container">
+
+<div class="title">
+<h1>Find the Perfect Supplier</h1>
+<p>Enter your product requirements and discover suppliers worldwide</p>
+</div>
+
+<div class="form-box">
+
+<div class="form-group">
+<label>Product</label>
+<input id="product" placeholder="Example: Hoodies, Smart Watch, Gym Wear">
+</div>
+
+<div class="form-group">
+<label>Ship To</label>
+<select id="country">
+<option>USA</option>
+<option>UK</option>
+<option>Germany</option>
+<option>UAE</option>
+<option>Pakistan</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Quantity</label>
+<input id="quantity" placeholder="Example: 500">
+</div>
+
+<div class="form-group">
+<label>Price Range (per unit)</label>
+<input id="price" placeholder="Example: $3 - $7">
+</div>
+
+<button onclick="findSuppliers()">Find Suppliers</button>
+
+</div>
+
+<div class="results" id="results"></div>
+
+</div>
+
+<script>
+
+function findSuppliers(){
+
+const product=document.getElementById("product").value.toLowerCase()
+
+const results=document.getElementById("results")
+
+results.innerHTML=""
+
+let suppliers=[]
+
+if(product.includes("hoodie")||product.includes("shirt")||product.includes("clothing")){
+
+suppliers=[
+{
+name:"Shanghai Apparel Factory",
+country:"China",
+price:"$4.20",
+moq:"100 pcs",
+rating:"⭐⭐⭐⭐"
+},
+{
+name:"Istanbul Textile Manufacturer",
+country:"Turkey",
+price:"$5.10",
+moq:"200 pcs",
+rating:"⭐⭐⭐⭐"
+},
+{
+name:"Lahore Garments Export",
+country:"Pakistan",
+price:"$3.90",
+moq:"150 pcs",
+rating:"⭐⭐⭐⭐"
+}
+]
+
+}
+
+else if(product.includes("watch")||product.includes("electronics")){
+
+suppliers=[
+{
+name:"Shenzhen Electronics Ltd",
+country:"China",
+price:"$18",
+moq:"50 pcs",
+rating:"⭐⭐⭐⭐"
+},
+{
+name:"Guangzhou Smart Devices",
+country:"China",
+price:"$22",
+moq:"100 pcs",
+rating:"⭐⭐⭐⭐⭐"
+}
+]
+
+}
+
+else{
+
+suppliers=[
+{
+name:"Global Wholesale Supplier",
+country:"China",
+price:"$6",
+moq:"200 pcs",
+rating:"⭐⭐⭐⭐"
+}
+]
+
+}
+
+suppliers.forEach(s=>{
+
+results.innerHTML+=`
+
+<div class="card">
+
+<h3>${s.name}</h3>
+
+<div class="tag">Country: ${s.country}</div><br>
+
+<div class="tag">MOQ: ${s.moq}</div><br>
+
+<div class="tag">Price: ${s.price}</div><br>
+
+<div class="tag">Rating: ${s.rating}</div>
+
+</div>
+
+`
+
+})
+
+}
+
+</script>
+
+</body>
+</html>
