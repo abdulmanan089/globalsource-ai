@@ -1,60 +1,315 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>GlobalSource AI</title>
-<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+background:linear-gradient(-45deg,#eef1f8,#dfe9f3,#e8ecf7,#d4e3ff);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+color:#111;
+overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 80px;
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
+}
+
+.nav-links a{
+margin-left:30px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.nav-btn{
+margin-left:20px;
+padding:10px 25px;
+border-radius:25px;
+border:none;
+background:black;
+color:white;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:90px 20px;
+}
+
+.hero h1{
+font-size:70px;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:650px;
+margin:auto;
+color:#555;
+font-size:18px;
+}
+
+.hero-btn{
+margin-top:30px;
+padding:15px 40px;
+border-radius:30px;
+border:none;
+background:black;
+color:white;
+font-size:16px;
+cursor:pointer;
+display:inline-block;
+text-decoration:none;
+}
+
+/* CARDS */
+
+.cards{
+display:flex;
+justify-content:center;
+gap:30px;
+padding:60px 40px;
+flex-wrap:wrap;
+}
+
+.card{
+background:rgba(255,255,255,0.35);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.4);
+border-radius:20px;
+padding:25px;
+width:300px;
+box-shadow:0 20px 45px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-12px) scale(1.04);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.card p{
+color:#555;
+font-size:14px;
+}
+
+/* PRODUCT SLIDESHOW */
+
+.product-card{
+width:330px;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 25px 60px rgba(0,0,0,0.25);
+transition:0.5s;
+}
+
+.product-card img{
+width:100%;
+display:block;
+}
+
+.product-card:hover{
+transform:rotateY(12deg) rotateX(6deg) scale(1.06);
+}
+
+.stat{
+background:black;
+color:white;
+padding:60px;
+border-radius:25px;
+font-size:50px;
+font-weight:700;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.stat span{
+font-size:16px;
+font-weight:400;
+margin-top:10px;
+}
+
+.section{
+padding:80px;
+display:flex;
+gap:40px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.section img{
+width:360px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+transition:0.3s;
+}
+
+.section img:hover{
+transform:scale(1.06);
+}
+
+.footer{
+text-align:center;
+padding:40px;
+color:#555;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<header>
-<h1>GlobalSource AI</h1>
+<!-- NAVBAR -->
 
-<nav>
-<a href="index.html">Home</a>
-<a href="request.html">Request</a>
-<a href="login.html">Login</a>
-<a href="contact.html">Contact</a>
-</nav>
+<div class="navbar">
 
-</header>
+<div class="logo">GlobalSource AI</div>
+
+<div class="nav-links">
+
+<a href="finder.html">Supplier Finder</a> <a href="#">What we do</a> <a href="#">Services</a> <a href="#">Pricing</a> <a href="#">How it works</a>
+
+<button class="nav-btn">Get Started</button>
+
+</div>
+
+</div>
+
+<!-- HERO -->
 
 <section class="hero">
 
-<h2>Find Global Suppliers Instantly</h2>
+<h1>AI Powered Global Sourcing</h1>
 
-<p>AI powered global sourcing platform</p>
+<p>
+Discover manufacturers, suppliers, and wholesalers worldwide using AI.
+Source products faster and grow your ecommerce business.
+</p>
 
-<a href="request.html">
-<button>Start Sourcing</button>
-</a>
-
-</section>
-
-<section class="features">
-
-<div class="card">
-<h3>AI Supplier Matching</h3>
-<p>Our AI finds the best manufacturers worldwide.</p>
-</div>
-
-<div class="card">
-<h3>Compare Quotes</h3>
-<p>Instant supplier quotes from multiple countries.</p>
-</div>
-
-<div class="card">
-<h3>Fast Global Sourcing</h3>
-<p>Get suppliers within seconds.</p>
-</div>
+<a href="finder.html" class="hero-btn">Find Suppliers Now</a>
 
 </section>
 
-<footer>
+<!-- FEATURES -->
 
-<p>© 2026 GlobalSource AI</p>
+<section class="cards">
 
-</footer>
+<div class="card">
+<h3>🤖 AI Supplier Search</h3>
+<p>Instantly discover verified suppliers using AI technology.</p>
+</div>
+
+<div class="card">
+<h3>🌍 Global Marketplace</h3>
+<p>Access suppliers from China, Pakistan, Turkey and more.</p>
+</div>
+
+<div class="card">
+<h3>💰 Price Comparison</h3>
+<p>Compare quotes and find the best manufacturers quickly.</p>
+</div>
+
+</section>
+
+<!-- PRODUCT SECTION -->
+
+<section class="cards">
+
+<div class="product-card">
+
+<img id="productSlide" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
+
+</div>
+
+<div class="stat">
+50x
+<span>More suppliers discovered</span>
+</div>
+
+</section>
+
+<!-- IMAGE SECTION -->
+
+<section class="section">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
+
+</section>
+
+<div class="footer">
+© 2026 GlobalSource AI
+</div>
+
+<script>
+
+const images = [
+
+"https://images.unsplash.com/photo-1523381210434-271e8be1f52b",
+"https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
+"https://images.unsplash.com/photo-1520975916090-3105956dac38",
+"https://images.unsplash.com/photo-1556906781-9a412961c28c",
+"https://images.unsplash.com/photo-1593032465175-481ac7f401a0"
+
+];
+
+let i = 0;
+
+setInterval(function(){
+
+i++;
+
+if(i >= images.length){
+i = 0;
+}
+
+document.getElementById("productSlide").src = images[i];
+
+},2000);
+
+</script>
 
 </body>
 </html>
